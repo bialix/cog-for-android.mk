@@ -60,6 +60,11 @@ cp $file $HELLOWORLD_ROOT/assets
 fi
 done
 
+
+# [Cog] update list of C++ files to compile in jni/Android.mk
+cd jni && ./update-androidmk.sh
+
+
 if [[ $buildexternalsfromsource ]]; then
 echo "Building external dependencies from source"
 $NDK_ROOT_LOCAL/ndk-build -C $HELLOWORLD_ROOT $* \
